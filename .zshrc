@@ -21,3 +21,6 @@ export NVM_DIR="$HOME/.nvm"
 alias gs='git status'
 
 alias tf='terraform'
+
+eval $(pyenv init --path)
+
