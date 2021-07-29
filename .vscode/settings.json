@@ -1,0 +1,12 @@
+{
+    "telemetry.enableTelemetry": false,
+    "workbench.enableExperiments": false,
+    "workbench.colorTheme": "Monokai Dimmed",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "files.autoSave": "onFocusChange",
+    "editor.fontSize": 14,
+    "editor.minimap.showSlider": "always",
+    "editor.renderWhitespace": "trailing"
+}
