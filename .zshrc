@@ -13,20 +13,27 @@ precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
 PROMPT="%* %n %~ \$vcs_info_msg_0_%(?..[%?])%# "
 
+# do not insert duplicate history items
+setopt HIST_IGNORE_DUPS
+
 
 # Aliases
 alias gs='git status'
 alias tf='terraform'
 
 # Node
-# export NVM_DIR="$HOME/.nvm"
-#   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-#   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # python
-eval "$(pyenv init --path)" && eval "$(pyenv init -)"
+if type pyenv &> /dev/null; then
+  eval "$(pyenv init --path)" && eval "$(pyenv init -)"
+fi
 # python poetry
 export PATH="$HOME/.poetry/bin:$PATH"
 
 # direnv
-eval "$(direnv hook zsh)"
+if type direnv &> /dev/null; then
+  eval "$(direnv hook zsh)"
+fi
