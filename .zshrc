@@ -20,6 +20,8 @@ setopt HIST_IGNORE_DUPS
 # Aliases
 alias gs='git status'
 alias tf='terraform'
+alias prpc='poetry run pre-commit'
+
 
 # Node
 export NVM_DIR="$HOME/.nvm"
